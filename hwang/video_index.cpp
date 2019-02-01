@@ -52,7 +52,7 @@ std::vector<uint8_t> VideoIndex::serialize() const {
     desc.add_keyframe_indices(k);
   }
   desc.set_metadata_bytes(metadata_bytes_.data(), metadata_bytes_.size());
-  std::vector<uint8_t> data(desc.ByteSizeLong());
+  std::vector<uint8_t> data(desc.ByteSize());
   desc.SerializeToArray(data.data(), data.size());
   return data;
 }
